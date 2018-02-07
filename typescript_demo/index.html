@@ -1,0 +1,1986 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <title>TypeScript &middot; the path to better JavaScript</title>
+    <meta name="description" content="Get an introduction to TypeScript, a typed superset of JavaScript that compiles to plain JavaScript.">
+
+    <!-- URL CANONICAL -->
+    <link rel="canonical" href="https://github.com/SteveByerly/typescript-demo">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS SVG Icons (Font Awesome), Highlight, WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/lib.min.css">
+
+    <!-- CSS Main -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/main.css">
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+    <link rel="shortcut icon" href="static/images/favicons/favicon.ico">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+  </head>
+  <body>
+    <header role="banner">
+      <nav role="navigation">
+        <a class="alignleft p-2" href="index.html" title="SteveByerly" target="_blank">
+          SteveByerly
+        </a>
+        <ul>
+          <li class="github">
+            <a rel="external" href="https://github.com/SteveByerly" title="Github" target="_blank">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <em>SteveByerly</em>
+            </a>
+          </li>
+          <li class="twitter">
+            <a rel="external" href="https://twitter.com/SteveByerly" title="Twitter" target="_blank">
+              <svg class="fa-twitter">
+                <use xlink:href="#fa-twitter"></use>
+              </svg>
+              <em>@SteveByerly</em>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main role="main">
+      <article id="webslides" class="vertical">
+
+        <section class="bg-black-blue aligncenter">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/YZ8tT2Nn4is');"></span>
+          <!--.wrap -->
+          <div class="wrap">
+            <h1 class="text-landing text-serif">TypeScript</h1>
+            <p class="text-subtitle">the path to better JavaScript</p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue">
+          <div class="wrap aligncenter">
+            <h1 class="text-landing text-serif">Introduction</h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-blue frame">
+          <div class="wrap">
+            <div class="grid sm vertical-align">
+              <div class="column">
+                <h3>
+                  /usr/bin/whoami
+                </h3>
+              </div>
+              <div class="column bg-white shadow">
+                <h2>Steve Byerly</h2>
+                <ul class="description">
+                  <li>
+                    <strong class="text-label">Work:</strong>
+                    Senior Software Engineer @ <a href="https://intellitect.com/" target="_blank" title="Intellitect Website">Intellitect</a>
+                  </li>
+                  <li>
+                    <strong class="text-label">Github:</strong>
+                    <a href="https://github.com/SteveByerly" target="_blank">github.com/SteveByerly</a>
+                  </li>
+                  <li>
+                    <strong class="text-label">Twitter:</strong>
+                    <a href="https://twitter.com/SteveByerly" target="_blank">@SteveByerly</a>
+                  </li>
+                  <li>
+                    <strong class="text-label">Python Spokane:</strong>
+                    <a href="https://github.com/python-spokane" target="_blank">github.com/python-spokane</a>
+                    &bull;
+                    <a href="https://twitter.com/PythonSpokane" target="_blank">@PythonSpokane</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="fullscreen">
+          <div class="card-50">
+            <figure>
+              <img src="https://lh3.googleusercontent.com/vMzHsNW3RzwuJzyc6EjoEZgwnySLRbrEobg5k6ssPJ8qwvX0xze9TCujqo2UkqolmGHma03eYWrpj6wKYlzo-Uuc6fRPZxLdsy4R4OA5tGYHOKHYK1GQDUcCMnxDC4bq56XIz2jK6PuWK1zW-tuYzNuW4wOv0g4enktYOir4uOxTf0zkV4kVJEY6hg6I1SdTmjHCTjMhrlq14lckUNzjocG5O6KmiHFrHsUdIJMpwRuJr5y3c_XUqsHLkDHLVGTSF-P8g4XTBrgI1oedIjupgehLhVTB1c3CKKCeQMVvDf2ImgFDyXopv5kh5hSyzxxRk3PehGBl319UR9vdrLd2FYp2bHXzQHZdEh-c_6CgEjrXKCE47j4v7vjPmHI8KSJMqK8gwVlbg8sQSt1JZp9CB8ktysHgQ6f1I4VGBpR2Ht1jkCdneEgn_DxhZ2PhzZUjAqyB6oNNqgNni410qNNoaP0TWJwSH1cH5leBrEZ77GCs__UIu7rHJGwMGGScLjTJ-lqasnITNqh-rn9uuXZJzPhu5sZRuyMqat-I6Ymgtm2uDYAcp7oDm8pMdStoiSUQVGu7BqIpdh88ZVucn0oZrlCogW8PLKyTB1Ev-pp7CaTD1oG3HzlmByFfu1BWAl3J69w5CvG4khotzvflJp3Q4zYCZ7fWLOsBng=w1172-h1562-no"
+                alt="Kid 1">
+            </figure>
+
+            <figure>
+              <img src="https://lh3.googleusercontent.com/T3oYsB3odPn4iF18Z8G11Fh8Jm0zfbNE1oo5maaUNbA29MOjMan2OjuIa3DighoMAOS-qVFW2f2xJnaP4pBONd8-o2AYjC04jmqszNw7Nvs5oREfpYYxrphEv_PZgJJMtVyTTHI9G5Qsl2f9y8HAYtB3RBZbVJ_uGdf1XINVrNeWTr9tlyFHrXlCK14IEqffOF1ghbkgqOR22leKXOqFnFkXbQZZLX6YEZWwCaGdwktsNWQ4sDkDqX1_bLu3-kaaCqiF_rnDJThbqH9jJgxh_bXqsVPb3cRrdrS6h3qRpSiKOyQ9GCBWMXsB1V2SdFZQCzNZzMvwo0xg_iJ-04aqVubr6K4m2RcMEPQGFgJ7ezkc4RQCHsmCddD_tTZFqyLF5V-TQHoQ8jmbMKTOxEJyzRn4_F-wGGsTviqc1wAk6DcQ5zXQ_trpwfeyccjRxjHSbVDPHeWo0AdnUgPVPJ96Bd72KGAak8z3zmyCvy95VOiM-nCoYV7MI1VftijH9L31pSaAIFbO4ahQbDr5dUR0eN5qA2JpPeU4J4ea2M0xk2NWPSDS6pd8Hnx8EOc2ZeiiYLpS98KFfPYPV8FoFLUjUqLst6ZKuLU3A10kJhcyelHnOABZMa5I2rJ95Ev3A8kaxBBRTX2yzy9XmeP9zAvcp68FlEGnu59H4Q=w1172-h1562-no"
+                alt="Kid 2">
+            </figure>
+          </div>
+        </section>
+
+        <section class="fullscreen">
+          <div class="wrap size-70">
+            <h3>Table of Contents</h3>
+            <hr>
+            <div class="grid toc">
+              <div class="column">
+                <ol>
+                  <li>
+                    <a href="#" title="Go to Intro to TypeScript">
+                      <span class="chapter">Intro to TypeScript</span>
+                    </a>
+                    <ol>
+                      <li>
+                        <span class="chapter">Background &amp; Purpose</span>
+                      </li>
+                      <li>
+                        <span class="chapter">Features</span>
+                      </li>
+                      <li>
+                        <span class="chapter">TypeScript: the bad parts</span>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <a href="#" title="Go to Using TypeScript">
+                      <span class="chapter">Using TypeScript</span>
+                    </a>
+                    <ol>
+                      <li>
+                        <span class="chapter">Installation &amp; Basic Usage</span>
+                      </li>
+                      <li>
+                        <span class="chapter">Extended Tooling</span>
+                      </li>
+                      <li>
+                        <span class="chapter">Typing Existing JavaScript</span>
+                      </li>
+                      <li>
+                        <span class="chapter">Configuration &amp; Compiling to JavaScript</span>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </div>
+              <div class="column">
+                <ol>
+                  <li class="hidden"></li>
+                  <li class="hidden"></li>
+                  <li>
+                    <a href="#advancedTypescript" title="Go to Advanced TypeScript">
+                      <span class="chapter">Basic TypeScript</span>
+                    </a>
+                    <ol>
+                      <li>
+                        Types &amp; Interfaces</span>
+                      </li>
+                      <li>
+                        <span class="chapter">Destructuring & Spread</span>
+                      </li>
+                      <li>
+                        <span class="chapter">Classes</span>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <a href="#advancedTypescript" title="Go to Advanced TypeScript">
+                      <span class="chapter">Advanced TypeScript</span>
+                    </a>
+                    <ol>
+                      <li>
+                        <span class="chapter">Set Theory and Enums</span>
+                      </li>
+                      <li>
+                        <span class="chapter">Generics and Partials</span>
+                      </li>
+                      <li>
+                        <span class="chapter">Type Narrowing &amp; Type Guards</span>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <a href="#" title="Go to Questions">
+                      <span class="chapter">Questions</span>
+                    </a>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <!-- end .toc -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <div class="wrap">
+            <div class="card-50">
+              <h1 class="flex-content">Housekeeping</h1>
+              <div>
+                <ul class="flexblock specs">
+                  <li>
+                    <div>
+                      <svg class="fa-question-circle text-green">
+                        <use xlink:href="#fa-question-circle"></use>
+                      </svg>
+                      <div>
+                        <h2>Questions?</h2>
+                        Please Ask!. Might take long questions offline.
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <svg class="fa-clock-o text-blue">
+                        <use xlink:href="#fa-clock-o"></use>
+                      </svg>
+                      <div>
+                        <h2>Miss Something?</h2>
+                        <p class="alignleft">
+                          Please let me know. Slides and examples will be available.<br />
+                          <a href="https://github.com/SteveByerly/typescript-demo">
+                            https://github.com/SteveByerly/typescript-demo
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <svg class="fa-exclamation-circle text-red">
+                        <use xlink:href="#fa-exclamation-circle"></use>
+                      </svg>
+                      <div>
+                        <h2>do/don't, should/shouldn't, can/can't</h2>
+                        My opinions. Do what works best for you.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-black-blue aligncenter">
+          <span class="background dark" style="background-image: url('https://source.unsplash.com/xekxE_VR0Ec');"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <h1 class="text-landing text-serif">
+              1 - Intro to TypeScript
+            </h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Background &amp; Purpose
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="content-left">
+              <figure class="browser">
+                <img alt="typescript site" src="static/images/ts_site.png">
+              </figure>
+            </div>
+            <!-- .end .content-left -->
+            <div class="content-left">
+              <h2 class="mb-2">
+                What is TypeScript?
+              </h2>
+              <p class="text-intro">
+                More than just JavaScript with types
+              </p>
+              <hr />
+              <blockquote>
+                <p class="mb-4">
+                  "JavaScript that scales"
+                </p>
+
+                <p>
+                  "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript"
+                </p>
+              </blockquote>
+            </div>
+            <!-- .end .content-left -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3 class="mb-2">
+                  <strong>"JavaScript that scales."</strong>
+                </h3>
+                <p class="text-intro">
+                  JavaScript is <strong class="text-red">hard</strong>
+                </p>
+                <p>
+                  There are many idiosyncrasies to JavaScript. Keeping track of everything
+                  when working on your own project is hard enough - exponentially harder with a team.
+                </p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre class="javascript">
+var username,
+    totalFunds = 100,
+    clickHandler;
+
+var handleUser = function handler(name, debitFunds) {
+  var username = name;
+
+  function setupUser(name) {
+    clickHandler = userHandler;
+    totalFunds = totalFunds - debitFunds;
+    username = name;
+  }
+
+  setupUser(name);
+}
+
+handleUser('steve', 50);
+handleUser(50, 'mark');
+userHandler();
+</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+            <hr>
+            <p class="aligncenter">
+              Demo: <code>./intro/js-is-hard.js</code>
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <p class="text-intro">
+                  <strong>
+                    "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript."
+                  </strong>
+                </p>
+                <p class="text-intro">
+                  All JavaScript is TypeScript.
+                </p>
+                <p>
+                  TypeScript, the language, is quite similar to plain JavaScript. It changes the more you
+                  opt-in to additional features - some of which are not unique to TypeScript.
+                </p>
+                <p>
+                  In the end, your TypeScript is compiled back to JavaScript<br />
+                  <strong class="text-red">Usually better JavaScript than you or I would write</strong>
+                </p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+<pre class="javascript mb-3">
+// app.js
+var username = 'steve';
+function sayHi() {
+  return 'Hi, ' + username;
+}
+</pre>
+
+<pre class="typescript">
+// app.ts
+var username = 'steve';
+function sayHi() {
+  return 'Hi, ' + username;
+}
+</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Features
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <h3>Features at a glance</h3>
+            <ul class="flexblock border">
+              <li class="bg-white">
+                <p class="text-intro">
+                  <strong>Types</strong>
+                </p>
+                <ul class="list-styled">
+                  <li>
+                    <div>Base</div>
+                    <code>
+                      boolean,
+                      number,
+                      string<br />
+                      Object,
+                      null,
+                      undefined
+                    </code>
+                  </li>
+                  <li>
+                    <div>Collections</div>
+                    <code>
+                      array,
+                      enum,
+                      "tuple"
+                    </code>
+                  </li>
+                  <li>
+                    <div>Special</div>
+                    <code>
+                    any,
+                    void,
+                    never
+                    </code>
+                  </li>
+                </ul>
+              </li>
+              <li class="bg-white">
+                <p class="text-intro">
+                  <strong>Components</strong>
+                </p>
+                <ul class="list-styled">
+                  <li>Types</li>
+                  <li>Interfaces</li>
+                  <li>Enums</li>
+                  <li>
+                    Classes
+                    <ul class="ml-2">
+                      <li>Inheritance</li>
+                      <li>Mixins</li>
+                    </ul>
+                  </li>
+                  <li>Modules</li>
+                  <li>Namespaces</li>
+                </ul>
+              </li>
+              <li class="bg-white">
+                <p class="text-intro">
+                  <strong>ES-next Features</strong>
+                </p>
+                <ul class="list-styled">
+                  <li>Spread / Destructuring</li>
+                  <li>Iterators / Generators</li>
+                  <li>Async / Await</li>
+                  <li>Async / Dynamic Imports</li>
+                  <li>Decorators</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <h4>TypeScipt In-Use</h4>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h5>JavaScript</h5>
+<pre class="javascript">
+var User = (function () {
+  function User(username) {
+    this.isLoggedIn = true;
+    this.username = username;
+  }
+
+  User.prototype.logout = function () {
+    this.isLoggedIn = false;
+    return "Goodbye, " + this.username;
+  };
+
+  return User;
+}());
+
+var user = new User("steve");
+</pre>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <h5>TypeScript</h5>
+<pre class="typescript">
+class User {
+  private username: string;
+  private isLoggedIn = true;
+
+  constructor(username: string) {
+    this.username = username;
+  }
+
+  private logout() {
+    this.isLoggedIn = false;
+    return `Goodbye, ${this.username}`;
+  }
+}
+
+const user = new User("steve");
+</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+            <hr />
+            <div class="aligncenter">
+              These are equivalent
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              The Bad Parts
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-ycombinator">
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <h3 class="text-secondary mb-3">
+              Haters gonna hate
+            </h3>
+            <blockquote class="text-quote mb-2">
+              <p>
+                Typescript is to .NET as Coffeescript was to Ruby.
+                <br /> A bunch of developers who didn't know JavaScript and wanted to find the closest thing they could to what they already
+                knew.
+              </p>
+            </blockquote>
+            <blockquote class="text-quote mb-2">
+              <p>
+                I'll keep writing in the language it compiles down to.<br />
+                Which would be JavaScript, of course.
+              </p>
+            </blockquote>
+            <blockquote class="text-quote">
+              <p class="mb-4">
+                If you like typescript so much you might as well stop pretending you write JavaScript
+                and just write in C# like you really want to.
+              </p>
+              <p>
+                <cite class="text-secondary text-right">
+                  <a href="https://news.ycombinator.com" target="_blank">
+                    Hacker News Users
+                  </a>
+                </cite>
+              </p>
+            </blockquote>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-40 bg-white shadow">
+              <figure>
+                <img src="https://source.unsplash.com/1K9T5YiZ2WU">
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  JS Fatigue ++
+                </h2>
+                <ul>
+                  <li>
+                    New/Additional Tooling
+                    <ul>
+                      <li>Compilers</li>
+                      <li>Linters</li>
+                      <li>Build Pipelines</li>
+                      <li>IDE configuration</li>
+                    </ul>
+                  </li>
+                  <li>
+                    More dependencies to produce the same output
+                  </li>
+                  <li>
+                    Extra effort to keep your project and dependencies updated
+                  </li>
+                  <li>
+                    Interoperability with other systems and frameworks
+                  </li>
+                </ul>
+              </div>
+              <!-- end .flex-content-->
+            </div>
+            <!-- .end .card50 -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="content-left">
+              <figure class="browser">
+                <img alt="typescript site" src="static/images/github_def_typed.png">
+              </figure>
+            </div>
+            <!-- .end .content-left -->
+            <div class="content-left">
+              <h3 class="mb-2">3rd-Party Type Definitions</h3>
+              <p>
+                <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank">
+                  https://github.com/DefinitelyTyped/DefinitelyTyped
+                </a>
+              </p>
+              <ul>
+                <li>
+                  Repo size makes it hard to:
+                  <ul>
+                    <li>Find relative issues/bugs</li>
+                    <li>Search through commit history</li>
+                    <li>Contribute</li>
+                  </ul>
+                </li>
+                <li>
+                  Often difficult to match versions against library versions
+                </li>
+                <li>
+                  No cler timeline for updates / releases
+                </li>
+                <li>
+                  Documentation lacking (usually non-existent)
+                </li>
+              </ul>
+            </div>
+            <!-- .end .content-left -->
+            <hr>
+            <p class="aligncenter">
+              This is seriously awful
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-40 bg-white shadow">
+              <figure>
+                <img src="static/images/unit_tests.jpg">
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h3 class="mb-2">
+                  Unit Testing
+                </h3>
+                <ul>
+                  <li>
+                    How to test?
+                    <ul>
+                      <li>Are tests written in TypeScript?</li>
+                      <li>Does compilation use the same config as source?</li>
+                    </ul>
+                    <li>
+                      What to test?
+                      <ul>
+                        <li>Reference your TypeScript files directly?</li>
+                        <li>Import your compiled library / app?</li>
+                      </ul>
+                    </li>
+                    <li>
+                      Setup build pipelines for both code and tests
+                      <ul>
+                        <li>Loaders for src and test files</li>
+                        <li>Ensure proper sourcemap configuration</li>
+                      </ul>
+                    </li>
+                </ul>
+              </div>
+              <!-- end .flex-content-->
+            </div>
+            <!-- .end .card50 -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-40 bg-white shadow">
+              <figure>
+                <img src="static/images/trust_me.png">
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h3 class="mb-1">
+                  Developers
+                </h3>
+                <p class="text-intro mb-1">
+                  When you tell the compiler "trust me, everything's cool"
+                </p>
+                <p class="mb-3">
+                  ...but not your team<br />
+                  ...and you don't add test cases
+                </p>
+<pre class="typescript p-2">
+const percentUsed = amtRemaining / (&lt;any&gt;initialAmt);
+const userName = user.profile!.username.strip();
+</pre>
+                <p>
+                  TypeScript provides us a way to avoid many of the pitfalls and unforseen
+                  errors in our normal JavaScript.
+                </p>
+                <p><strong>However...</strong></p>
+                <p class="mb-0">
+                  You still need to be disciplined and maintain good practices, avoiding
+                  'easy' routes as they come up.
+                </p>
+              </div>
+              <!-- end .flex-content-->
+            </div>
+            <!-- .end .card50 -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue aligncenter">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/xekxE_VR0Ec');"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <h1 class="text-landing text-serif">
+              Using TypeScript
+            </h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              2 - Using TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Installation &amp; Basic Usage
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              2 - Using TypeScript
+            </p>
+          </header>
+          <div class="wrap size-50">
+            <h3 class="mb-2">
+              Installation
+            </h3>
+            <div class="bg-white shadow">
+              <div class="text-context text-context-right mb-2">
+                <small>*Node.js and NPM are required</small>
+              </div>
+              <div class="grid iconic">
+                <svg class="fa-times-circle text-red">
+                  <use xlink:href="#fa-times-circle"></use>
+                </svg>
+                <div class="flex-grow">
+                  <p>
+                    Most examples and tutorials have you install TypeScript globally:
+                  </p>
+                  <pre class="shell p-2">$ npm install -g typescript</pre>
+                </div>
+              </div>
+              <hr />
+              <div class="grid iconic">
+                <svg class="fa-check-circle text-green">
+                  <use xlink:href="#fa-check-circle"></use>
+                </svg>
+                <div class="flex-grow">
+                  <p>
+                    Make TypeScript a dev dependency of your project instead:
+                  </p>
+                  <p>
+                    <pre class="shell p-2">$ npm install --save-dev --save-exact typescript</pre>
+                  </p>
+                  <ul>
+                    <li>Version is now specific to your app</li>
+                    <li>All contributors will use the same version</li>
+                    <li>Saving exact version helps avoid unexpected changes</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              2 - Using TypeScript
+            </p>
+          </header>
+          <div class="wrap size-50">
+            <h3 class="mb-2">
+              Basic Usage
+            </h3>
+            <div class="bg-white shadow">
+              <div class="text-context text-context-right mb-2">
+                <small>*npx - execute binaries from npm packages</small>
+              </div>
+              <div class="mb-2">
+                <p>
+                  <strong>CLI</strong> - passing arguments directly
+                </p>
+<pre class="shell p-2">
+<span class="bash">$ # global install
+$ tsc srcFile.ts --outDir ./dist
+</span>
+<span class="bash">$ # local installs
+$ npx tsc srcFile.ts --outDir ./dist
+$ ./node_modules/.bin/tsc srcFile.ts --outDir ./dist</span>
+</pre>
+              </div>
+              <div>
+                <p>
+                  <strong>CLI</strong> - using a 'project'
+                </p>
+<pre class="shell p-2">
+<span class="bash">$ npx tsc -p ../tsconfig.json</span>
+</pre>
+              </div>
+              <hr />
+              <div class="aligncenter">
+                <strong>That's it...</strong>
+              </div>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              2 - Using TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Extended Tooling
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <div class="wrap">
+            <h3 class="mb-2">Extended Tooling</h3>
+            <ul class="flexblock border">
+              <li class="bg-white">
+                <p class="text-intro">
+                  <strong>IDEs and Plugins</strong>
+                </p>
+                <ul class="list-styled">
+                  <li>
+                    <a href="https://code.visualstudio.com/" title="VS Code" target="_blank">
+                      VS Code
+                    </a>
+                    <ul>
+                      <li class="text-green">First-Class Support!</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="https://github.com/amireh/happypack" title="HappyPack" target="_blank">
+                      Sublime Text
+                    </a>
+                    <ul>
+                      <li class="text-red">
+                        <a href="https://github.com/Microsoft/TypeScript-Sublime-Plugin" title="TypeScript-Sublime-Plugin" target="_blank"></a>
+                        w/ TypeScript-Sublime-Plugin
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="https://atom.io/" title="Atom" target="_blank">
+                      Atom
+                    </a>
+                    <ul>
+                      <li class="text-red">
+                        <a href="https://atom.io/packages/atom-typescript" title="Atom TypeScript" target="_blank"></a>
+                        w/ atom-typescript
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="bg-white">
+                <p class="text-intro">
+                  <strong>Formatters / Linters</strong>
+                </p>
+                <ul class="list-styled">
+                  <li>
+                    <a href="https://palantir.github.io/tslint" title="TSLint" target="_blank">
+                      TSLint
+                    </a>
+                    <ul>
+                      <li>Also Fixes/Formats!</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="https://github.com/prettier/prettier" title="Prettier" target="_blank">
+                      Prettier
+                    </a>
+                  </li>
+                  <li>
+                    Various doc/code generators
+                  </li>
+                </ul>
+              </li>
+              <li class="bg-white">
+                <p class="text-intro">
+                  <strong>Bundlers / Loaders</strong>
+                </p>
+                <ul class="list-styled">
+                  <li>
+                    <a href="https://github.com/TypeStrong/ts-node" title="ts-node" target="_blank">
+                      ts-node
+                    </a>
+                    <br />
+                    Run your node app directly
+                  </li>
+                  <li>
+                    <a href="https://github.com/TypeStrong/ts-loader" title="ts-loader" target="_blank">
+                      ts-loader
+                    </a>
+                    <br />
+                    <span class="text-green">With perf boost:</span>
+                    <ul>
+                      <li>
+                        <a href="https://github.com/amireh/happypack" title="HappyPack Loader" target="_blank">
+                          HappyPack
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://github.com/Realytics/fork-ts-checker-webpack-plugin" title="Fork TS Checker Webpack Plugin" target="_blank">
+                          fork-ts-checker-webpack-plugin
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              2 - Using TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Typing Existing JavaScript
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              2 - Using TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-40 bg-white shadow">
+              <figure>
+                <pre class="javascript">
+// @ts-check
+
+/** @type {string} */
+var username;
+
+/**
+ * @param {string} user
+ * @param {boolean} isActive
+*/
+var login = function(user, isActive) {
+  username = user.name;
+}
+</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Type Checking JS
+                </h2>
+                <p>
+                  TypeScript 2.3 added support for type-checking and reporting errors in
+                  <code>.js</code> files with the <code>--checkJs</code> compiler option.
+                </p>
+                <p>
+                  Types can often be inferred by their assignment. When this fails, types
+                  can be specified using JSDoc annotations similar to TS annotations.
+                </p>
+                <p>
+                  The TS compiler is surprisingly good at checking JS, but this process is tedious
+                  and still prone to error.
+                </p>
+              </div>
+            </div>
+            <hr>
+            <p class="aligncenter">
+              Demo:
+              <code>./intro/js-type-checked.js</code>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              2 - Using TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Configuration &amp;<br />
+              Compiling to JavaScript
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              2 - Using TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-40 bg-white shadow">
+              <figure>
+                <pre class="json">{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "./src",
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "es2015.promise", "es5"],
+    "module": "esnext",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./dist/",
+    "pretty": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5"
+  },
+  "exclude": ["**/*.spec*"],
+  "include": ["./src/**/*"]
+}</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Configuration
+                </h2>
+                <p>
+                  TypeScript projects use a configuration file (<code>tsconfig.json</code>) to determine
+                  how the source will be compiled.
+                </p>
+                <p>
+                  Several of these settings will vary based on the type of application.
+                </p>
+                <p>
+                  <strong>Recommended Universal Settings:</strong>
+                </p>
+                <ul>
+                  <li>
+                    strict - strict(null/func/prop) & noImplicit(this/any)
+                  </li>
+                  <li>noUnusedLocals</li>
+                  <li>noUnusedParameters</li>
+                  <li>forceConsistentCasingInFileNames</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              1 - Intro to TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <h2 class="mb-2">
+              Compiled JavaScript
+            </h2>
+            <div class="grid">
+              <div class="column">
+                <h4 class="bg-white p-1">ES5
+                  <small>
+                    <code>npx tsc --target es5 --removeComments *.ts</code>
+                  </small>
+                </h4>
+<pre class="javascript">
+var User = (function () {
+  function User(username) {
+    this.isLoggedIn = true;
+    this.username = username;
+  }
+
+  User.prototype.logout = function () {
+    this.isLoggedIn = false;
+    return "Goodbye, " + this.username;
+  };
+
+  return User;
+}());
+
+var user = new User("steve");
+</pre>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <h4 class="bg-white p-1">ES6
+                  <small>
+                    <code>npx tsc --target es6 *.ts</code>
+                  </small>
+                </h4>
+<pre class="typescript">
+class User {
+  constructor(username) {
+    this.isLoggedIn = true;
+    this.username = username;
+  }
+
+  // This Is Private!!!
+  logout() {
+    this.isLoggedIn = false;
+    return `Goodbye, ${this.username}`;
+  }
+}
+
+const user = new User("steve");
+</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue aligncenter">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/xekxE_VR0Ec');"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <h1 class="text-landing text-serif">
+              Basic TypeScript
+            </h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              3 - Basic TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Types &amp; Interfaces
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              3 - Basic TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-50 bg-white shadow">
+              <figure>
+<pre class="typescript">
+type NumberOrString = number | string;
+
+type Direction = 'north' | 'south' | 'east' | 'west';
+
+type OddHour = 1 | 3 | 5 | 7 | 9 | 11;
+
+type FreeTime = undefined[];
+
+let age: NumberOrString = '42'; // string
+age = parseInt(age); // number
+age = undefined // error
+
+let name = 'steve';
+name = 42; // error
+</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Types
+                </h2>
+                <p class="text-intro">
+                  Types are the most fundamental and integral parts of TypeScript.
+                </p>
+                <p>
+                  They allow us to define our variables, method parameters, object properties, etc
+                  so that we can build code with confidence.
+                </p>
+                <p>
+                  The compiler is smart enough to generate implicit types for those values
+                  you do not explicitly type.
+                </p>
+                <p>
+                  Lastly, we can generate our own types whenever &amp; wherever they're needed.
+                </p>
+              </div>
+            </div>
+            <!-- .end .card -->
+            <hr>
+            <p class="aligncenter">
+              Demo:
+              <code>./basics/types.ts</code>
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              3 - Basic TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-50 bg-white shadow">
+              <figure>
+<pre class="typescript">
+interface Student {
+  name: string;
+  studentId: number;
+}
+
+interface Employee {
+  name: string;
+  employeeId?: string; // Optional
+}
+
+interface Immutable {
+  <span class="hljs-ts-builtin">readonly</span> name: string; // cannot re-set
+  <span class="hljs-ts-builtin">readonly</span> studentId: number;
+}
+</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Interfaces
+                </h2>
+                <p>
+                  Interfaces are one of the most powerful features of TypeScript.
+                </p>
+                <p>
+                  <strong>They provide two key benefits:</strong>
+                </p>
+                <ul class="mb-2">
+                  <li>
+                    Define the shape of our data without an implementation
+                  </li>
+                  <li>
+                    Provide a contract for our code and consumers of our code
+                  </li>
+                </ul>
+                <p>
+                  <svg class="fa-exclamation-circle text-red">
+                    <use xlink:href="#fa-exclamation-circle"></use>
+                  </svg>
+                  One very important difference from other interface implementations (e.g. c#)
+                  is that you do not need to explicitly implement the interface to adhere to it.
+                </p>
+              </div>
+            </div>
+            <!-- .end .card -->
+            <hr>
+            <p class="aligncenter">
+              Demo:
+              <code>./basics/interfaces.ts</code>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              3 - Basic TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Destructuring & Spread
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-green">
+          <header>
+            <p class="text-context">
+              3 - Basic TypeScript
+            </p>
+          </header>
+          <div class="wrap size-50">
+            <div class="bg-white shadow">
+              <h2 class="mb-2">
+                Destructuring
+              </h2>
+              <ol>
+                <li>
+                   Taking elements from an array <strong>by position</strong>
+                   and re-assigning them to new variables.
+                </li>
+                <li>
+                   Taking properties from an object <strong>by name</strong>
+                   and re-assigning them to new variables.
+                </li>
+              </ol>
+            </div>
+            <!-- .end .card -->
+          </div>
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              3 - Basic TypeScript
+            </p>
+          </header>
+          <div class="wrap size-70">
+            <div class="card-70 bg-white mb-4">
+              <div class="flex-content p-0">
+                <img src="static/images/drake_no.png" alt="No">
+              </div>
+              <figure>
+<pre class="typescript">
+// Arrays
+const heroes = ['iron man', 'superman', 'spiderman'];
+
+const bestHero = heroes[0];
+const mehHero = heroes[1];
+
+// Objects
+const hero = { name: 'batman', ability: 'rich guy' };
+
+const name = hero.name;
+const ability = hero.ability;
+</pre>
+              </figure>
+            </div>
+            <!-- .end .card -->
+            <div class="card-70 bg-white">
+              <div class="flex-content p-0">
+                <img src="static/images/drake_yes.png" alt="Yes">
+              </div>
+              <figure>
+<pre class="typescript">
+// Arrays
+const heroes = ['iron man', 'superman', 'spiderman'];
+
+const [bestHero, mehHero, worstHero] = heroes;
+
+// Objects
+const hero = { name: 'batman', ability: 'rich guy' };
+
+const { name, ability } = hero;
+</pre>
+              </figure>
+            </div>
+            <!-- .end .card -->
+          </div>
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              3 - Basic TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-50 bg-white shadow">
+              <figure>
+<pre class="typescript">
+// Arrays
+const good = ['iron man', 'superman', 'spiderman'];
+const bad = ['magneto', 'bane'];
+
+const all = [...good, ...bad];
+
+// Objects
+const hero = { name: 'batman', ability: 'rich guy' };
+
+const newHero = { ...hero, ability: 'super strength' };
+
+const heroCopy = { ...hero }; // heroCopy != hero;
+</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Spread Operator
+                </h2>
+                <p>
+                  The (<code>...</code>) spread operator allows you to 'spread' an array into another array,
+                  or an object into another object.
+                </p>
+                <p>
+                  While the spread operator makes it easier to create new variables from
+                  existing variables, it has a very important benefit:<br/>
+                </p>
+                <div style="position: relative;">
+                  <strong class="text-green text-spin">Immutability</strong>
+                </div>
+              </div>
+            </div>
+            <!-- .end .card -->
+            <hr>
+            <p class="aligncenter">
+              Demo:
+              <code>./basics/spread.ts</code>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              3 - Basic TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Classes
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              3 - Basic TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-50 bg-white shadow">
+              <figure>
+<pre class="typescript">
+class User extends Person implements Loggable {
+  private username: string;
+  private isLoggedIn = true;
+
+  constructor(username: string) {
+    this.username = username;
+  }
+
+  private logout() {
+    this.isLoggedIn = false;
+    return `Goodbye, ${this.username}`;
+  }
+}
+
+const user = new User("steve");
+</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Classes
+                </h2>
+                <p>
+                  Classes were a pseudo-construct in JavaScript, but have finally made their
+                  way as first-class JavaScript citizens (for better or worse).
+                </p>
+                <p>
+                  <strong>Classes:</strong>
+                </p>
+                <ul class="mb-2">
+                  <li>
+                    Encapsulate logic and 'instance' values
+                  </li>
+                  <li>
+                    Can be used as both a value and type
+                  </li>
+                  <li>
+                    Can be inherited, mixed-in, abstract
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- .end .card -->
+          </div>
+        </section>
+
+        <section class="bg-black-blue aligncenter">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/xekxE_VR0Ec');"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <h1 class="text-landing text-serif">
+              Advanced TypeScript
+            </h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              4 - Advanced TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Set Theory and Enums
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              4 - Advanced TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-50 bg-white shadow">
+              <figure>
+                <pre class="typescript">
+interface Person {
+  firstName: string;
+  lastName: string;
+}
+
+interface SchoolInfo {
+  studentId: number;
+}
+
+type Student = Person & SchoolInfo;
+
+const getStudent = (p: Person, s: SchoolInfo): Student => {
+  return { ...p, ...s };
+}
+</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Intersection Types
+                </h2>
+                <p>
+                  An intersection type combines multiple types into one.
+                </p>
+                <p>
+                  This allows you to add together existing types to represent a single type
+                  that has all the features you need.
+                </p>
+                <strong>Uses:</strong>
+                <p>
+                  Most commonly used for composition.<br />
+                  e.g. Generic functions that take multiple arguments and combine them into one entity.
+                </p>
+              </div>
+            </div>
+            <!-- .end .card -->
+            <hr>
+            <p class="aligncenter">
+              Demo:
+              <code>./advanced/intersection.ts</code>
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              4 - Advanced TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-50 bg-white shadow">
+              <figure>
+                <pre class="typescript">
+interface Student {
+  name: string;
+  studentId: number;
+}
+
+interface Employee {
+  name: string;
+  employeeId: string;
+}
+
+type Person = Student | Employee;
+
+const formatName = (person: Person): string => {
+  return person.name.trim().split(',').join(' ');
+}
+</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Union Types
+                </h2>
+                <p>
+                  Allow you to specify that a value will be one of several types
+                  and contain those properties that are common to both.
+                </p>
+                <p>
+                  You can both decrease the specificity of your function arguments
+                  and narrow their scope to use only those features necessary.
+                </p>
+                <strong>Uses:</strong>
+                <ul>
+                  <li>Handle similar, but un-related implementations</li>
+                  <li>
+                    Operate on variables that can take multiple value types<br />
+                    e.g. numberic input changeHandler
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- .end .card -->
+            <hr>
+            <p class="aligncenter">
+              Demo:
+              <code>./sets/union.ts</code>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              4 - Advanced TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Generics and Partials
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              4 - Advanced TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-50 bg-white shadow">
+              <figure>
+<pre class="typescript">
+interface Dictionary&lt;<span class="hljs-built_in">T</span>&gt; {
+  [key: string]: <span class="hljs-built_in">T</span>;
+}
+
+type Ranking = Dictionary&lt;number&gt;;
+
+const rankings: Ranking = {
+  'gold': 1,
+  'silver': 2,
+  'bronze': '3', // error
+};
+
+const sortBy = &lt;<span class="hljs-built_in">TEntity</span>&gt;(entities: TEntity[]) => {
+  return entities.sort();
+};
+</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Generics
+                </h2>
+                <p>
+                  Generics allow you to create dynamic components that can work over a variety
+                  of types.
+                </p>
+                <p>
+                  This allows you, and potential external parties, to use these components
+                  in a way that is simpler and more expressive.
+                </p>
+                <p>
+                  They also provide a way to create type-factories to generate reusable
+                  pieces of data structure, or rules for how you can interact with your objects.
+                </p>
+              </div>
+            </div>
+            <!-- .end .card -->
+            <hr>
+            <p class="aligncenter">
+              Demo:
+              <code>./advanced/generics.ts</code>
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              4 - Advanced TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-50 bg-white shadow">
+              <figure>
+<pre class="typescript">
+type Partial&lt;<span class="hljs-built_in">T</span>&gt; = {
+  [<span class="hljs-built_in">P</span> in keyof <span class="hljs-built_in">T</span>]?: <span class="hljs-built_in">T</span>[<span class="hljs-built_in">P</span>];
+}
+
+interface User {
+  name: string;
+  id: number;
+}
+
+const user1: User = {
+  name: 'steve',
+  id: 1, // error
+};
+
+type PartialUser = Partial&lt;<span class="hljs-built_in">User</span>&gt;;
+
+const user2: PartialUser = { name: 'steve' };
+</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Partials
+                </h2>
+                <p>
+                  Partials are a form of generics that alter an existing type.
+                </p>
+                <p>
+                  They provide a mechanism for quickly altering existing structures
+                  with well-defined, new behaviors and can also supplement existing
+                  structures with new properties.
+                </p>
+                <p class="mb-4"></p>
+                <p class="mb-4"></p>
+              </div>
+            </div>
+            <!-- .end .card -->
+            <hr>
+            <p class="aligncenter">
+              Demo:
+              <code>./advanced/partials.ts</code>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-black-blue frame">
+          <header>
+            <p class="text-context">
+              4 - Advanced TypeScript
+            </p>
+          </header>
+          <div class="wrap aligncenter">
+            <h3 class="text-landing text-serif">
+              Type Narrowing &amp; Type Guards
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <header>
+            <p class="text-context">
+              4 - Advanced TypeScript
+            </p>
+          </header>
+          <div class="wrap">
+            <div class="card-50 bg-white shadow">
+              <figure>
+<pre class="typescript">
+const isString = (value: any): value is string => {
+  if (!value) {
+    return false;
+  }
+
+  return typeof value === 'string'
+      || value instanceof String;
+};
+
+const toNumber = (value: string | number): number => {
+  if (isString(value)) {
+    return parseInt(value, 10);
+  }
+
+  return value;
+}
+</pre>
+              </figure>
+              <!-- end figure-->
+              <div class="flex-content">
+                <h2 class="mb-2">
+                  Type Narrowing
+                </h2>
+                <p>
+                  A type guard is some expression that performs a runtime check that guarantees
+                  the type in some scope.
+                </p>
+                <p class="mb-4">
+                  To define a type guard, you define a function whose return
+                  type is a type predicate.
+                </p>
+                <p class="mb-4"></p>
+                <p class="mb-4"></p>
+                <p class="mb-4"></p>
+              </div>
+            </div>
+            <!-- .end .card -->
+            <hr>
+            <p class="aligncenter">
+              Demo:
+              <code>./advanced/type-narrowing.ts</code>
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-black-blue aligncenter">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/R6xx6fnvPT8');"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <h1 class="text-landing text-serif">
+              Questions
+            </h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+      </article>
+      <!-- end article -->
+    </main>
+    <!-- end main -->
+
+    <script src="static/js/lib.min.js"></script>
+    <script src="static/js/highlight.min.js"></script>
+    <script>
+      window.ws = new WebSlides();
+      var preTags = document.getElementsByTagName('pre');
+      [...preTags].forEach(block => hljs.highlightBlock(block));
+    </script>
+
+    <!-- svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="static/js/svg-icons.js"></script>
+
+  </body>
+</html>
